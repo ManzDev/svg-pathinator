@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Pathinator</title>
+  <script type="module" crossorigin src="/svg-pathinator/index-CafqEowm.js"></script>
+  <link rel="stylesheet" crossorigin href="/svg-pathinator/index-Jrf2UTzr.css">
+</head>
+
+<body>
+
+  <div class="container">
+
+    <header>
+      <img src="/svg-pathinator/pathinator.svg" alt="Pathinator">
+      <h1>SVG Pathinator</h1>
+    </header>
+
+    <div class="app-container">
+      <div class="input-container">
+        <h2>Original:</h2>
+        <fieldset>
+          <legend>Pega aquí tu código:</legend>
+          <textarea class="source"></textarea>
+        </fieldset>
+      </div>
+      <div class="output-container">
+        <h2>Optimizado:</h2>
+
+        <div class="output-layout">
+          <fieldset class="preview-container">
+            <legend>Previsualización</legend>
+            <div class="preview"></div>
+
+            <div class="slider-container">
+              <input class="precision" type="range" min="0" max="8" value="4">
+              <output>4</output>
+              <input class="viewbox w" type="number" value="100">
+              <input class="viewbox h" type="number" value="100">
+            </div>
+
+          </fieldset>
+
+          <fieldset class="optimized-container">
+            <legend>Código optimizado:</legend>
+            <textarea class="optimized" readonly></textarea>
+
+            <div class="data-container">
+              <input class="size" readonly>
+              <button class="copy">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="copy">
+                  <path d="M7 18V2h13v16H7Zm-4 4V6h2v14h11v2H3Z" />
+                </svg>
+                Copiar
+              </button>
+            </div>
+          </fieldset>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
