@@ -1,9 +1,12 @@
 import { getStringFromStruct } from "./getStringFromStruct.js";
 
+const w = document.querySelector(".viewbox.w");
+const h = document.querySelector(".viewbox.h");
+
 export const generateSVG = (struct, element) => {
   const code = getStringFromStruct(struct);
   const html = /* html */`
-    <svg width="550" height="500" viewBox="0 0 100 100">
+    <svg width="550" height="500" viewBox="0 0 ${w.value} ${h.value}">
       <path d="${code}" stroke="#fff" fill="#000" />
     </svg>
   `;
