@@ -24,11 +24,22 @@ header {
 
   img {
     height: 100px;
+    z-index: 5;
   }
 
   h1 {
     font-size: 4.5rem;
     margin: 0;
+    z-index: 5;
+  }
+
+  .bg {
+    position: absolute;
+    color: #333;
+    inset: 0;
+    max-height: 128px;
+    overflow: hidden;
+    filter: blur(1px);
   }
 }
 
@@ -49,11 +60,15 @@ header {
     }
   }
 
-  textarea {
+  .source,
+  .optimized {
     font-family: var(--font-code);
     font-size: 1.15rem;
     width: 95%;
-    height: 95%;
+    max-height: 600px;
+    overflow-y: auto;
+
+    /* height: 95%; */
     border: 0;
     padding: 1rem;
     color: #fff;
@@ -96,6 +111,14 @@ header {
       width: 100%;
       height: 92%;
       background: #333;
+      overflow: hidden;
+      pointer-events: none;
+
+      svg {
+        background: #444;
+        translate: calc(var(--x) * 1px) calc(var(--y) * 1px);
+        pointer-events: auto;
+      }
     }
   }
 
@@ -146,5 +169,43 @@ header {
         box-shadow: 0 2px 0 var(--border-color), 0 3px 3px #0000004d;
       }
     }
+  }
+}
+
+/* Actions */
+.action {
+  span {
+    margin: 2px;
+    height: 20px;
+    min-width: 20px;
+    padding: 5px 8px;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .letter {
+    background: var(--color);
+    color: #fff;
+
+    &:is(.M, .m) { --color: #842424 }
+    &:is(.A, .a) { --color: #20923a }
+    &:is(.L, .l) { --color: #282a36 }
+    &:is(.Q, .q) { --color: #44475a }
+    &:is(.T, .t) { --color: #bd93f9 }
+    &:is(.S, .s) { --color: #6272a4 }
+    &:is(.C, .c) { --color: #8be9fd }
+    &:is(.H, .h) { --color: #50fa7b }
+    &:is(.V, .v) { --color: #ffb86c }
+    &:is(.Z, .z) { --color: #222; }
+
+    &:is(.lower) {
+      background: color-mix(
+        in srgb, var(--color), black 35%);
+    }
+  }
+
+  .p {
+    background: #2c2c2c;
+
   }
 }
